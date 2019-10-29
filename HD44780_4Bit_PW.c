@@ -34,22 +34,16 @@ void LCD_Write(uint8_t data, uint8_t RS)
 	PORT_D7 &= ~PIN_D7;
 	
 	#ifdef Diferent_data_pin
+	
 	if (data & 0x01)
-	{
 		PORT_D4 |= PIN_D4;
-	}
 	if (data & 0x02)
-	{
 		PORT_D5 |= PIN_D5;
-	}
 	if (data & 0x04)
-	{
 		PORT_D6 |= PIN_D6;
-	}
 	if (data & 0x08)
-	{
 		PORT_D7 |= PIN_D7;
-	}
+	
 	#else
 	Data_Port |= data & Data_4bit_Mask;
 	#endif
