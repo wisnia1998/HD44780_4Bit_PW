@@ -33,7 +33,7 @@ void LCD_Write(uint8_t data, uint8_t RS)
 	PORT_D6 &= ~PIN_D6;
 	PORT_D7 &= ~PIN_D7;
 	
-	#ifdef Diferent_data_pin
+	#ifdef Different_data_pin
 	
 	if (data & 0x01)
 		PORT_D4 |= PIN_D4;
@@ -64,5 +64,25 @@ void LCD_WriteCommand(uint8_t Command)
 	LCD_Write(Command, 0);
 	_delay_ms(1);
 	LCD_Write(Command >> 4, 0);
+}
+
+void LCD_Clear(void)
+{
+	LCD_WriteCommand(LCD_COMMAND_CLEAR_SCREEN);
+}
+
+void LCD_Show_Cursor(void)
+{
+	LCD_WriteCommand(LCD_PARAM_ON_OFF_DISPLAY | LCD_PARAM_ON_OFF_CURSOR);
+}
+
+void LCD_Blink_Cursor(void)
+{
+	LCD_WriteCommand(LCD_PARAM_ON_OFF_DISPLAY | LCD_PARAM_ON_OFF_BLINK);
+}
+
+void LCD_BlackLight(void)
+{
+	LCD_WriteCommand(LCD_COMMAND_ON_OFF | LCD_PARAM_ON_OFF_DISPLAY);
 }
 
