@@ -14,7 +14,7 @@
 
 #define Data_4bit_Mask 0x0f
 //////////////////Pin control declaration/////////////////////////////////
-#define Different_data_pin
+//#define Different_data_pin
 #define PIN_RS	(1 << PORTB1)
 #define PORT_RS	PORTB
 #define DDR_RS	DDRB
@@ -41,10 +41,10 @@
 #else
 #define Data_Port PORTD
 #define Data_Direct DDRD
-#define PIN_D4	(1 << PORTD0)
-#define PIN_D5	(1 << PORTD1)
-#define PIN_D6	(1 << PORTD2)
-#define PIN_D7	(1 << PORTD3)
+#define PIN_D4	(1 << PORTD4)
+#define PIN_D5	(1 << PORTD5)
+#define PIN_D6	(1 << PORTD6)
+#define PIN_D7	(1 << PORTD7)
 #endif
 //////////////////////////////////////////////////////////////////////////
 
@@ -84,8 +84,11 @@ void LCD_WriteData(uint8_t Data);
 void LCD_WriteCommand(uint8_t Command);
 void LCD_Clear(void);
 void LCD_Set_Cursor(uint8_t Command);
-void LCD_Blink_Cursor(void);
-void LCD_Show_Cursor(void);
-void LCD_BlackLight(void);
+void LCD_Blink_Cursor_ON(void);
+void LCD_Blink_Cursor_OFF(void);
+void LCD_Cursor_ON(void);
+void LCD_Cursor_OFF(void);
+void LCD_BlackLight_ON(void);
+void LCD_BlackLight_OFF(void);
 void LCD_Adjust(uint8_t Data, uint8_t site);
 //////////////////////////////////////////////////////////////////////////
