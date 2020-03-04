@@ -61,7 +61,7 @@
 #define LCD_COMMAND_ENTRY_MODE_SET 0x04
 #define LCD_COMMAND_ON_OFF 0x08
 #define LCD_COMMAND_SHIFT 0x10
-#define LCD_COMMAND_FUNCTION_SET 0x20
+#define LCD_COMMAND_FUNCTION_SET 0x03
 #define LCD_COMMAND_SET_CGRAM_ADDRESS 0x40
 #define LCD_COMMAND_SET_DDRAM_ADDRESS 0x80
 /********************************************************/
